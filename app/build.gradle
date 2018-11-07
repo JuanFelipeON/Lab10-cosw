@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-  compileSdkVersion 25
-  buildToolsVersion "25.0.2"
+  compileSdkVersion 28
+  buildToolsVersion '26.0.2'
   defaultConfig {
     applicationId "co.edu.pdam.eci.persistenceapiintegration"
     minSdkVersion 16
-    targetSdkVersion 25
+    targetSdkVersion 28
     versionCode 1
     versionName "1.0"
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -24,10 +24,18 @@ dependencies {
   androidTestCompile( 'com.android.support.test.espresso:espresso-core:2.2.2', {
     exclude group: 'com.android.support', module: 'support-annotations'
   } )
-  compile 'com.android.support:appcompat-v7:25.2.0'
-  compile 'com.android.support.constraint:constraint-layout:1.0.2'
+  compile 'com.android.support:appcompat-v7:28.0.0'
+  compile 'com.android.support.constraint:constraint-layout:1.1.3'
   //ORMLite
   compile 'com.j256.ormlite:ormlite-android:5.0'
+
+  def room_version = "2.1.0-alpha02"
+
+  implementation "androidx.room:room-runtime:$room_version"
+  annotationProcessor "androidx.room:room-compiler:$room_version" // use kapt for Kotlin
+
+
+
 
 
 
